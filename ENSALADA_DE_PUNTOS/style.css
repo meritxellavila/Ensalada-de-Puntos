@@ -42,6 +42,8 @@ flex-direction: column;
   overflow: hidden;
   user-select: none; 
   overflow: hidden; /*previene que los elementos salgan de la pantalla */
+  position: relative;
+  user-select: none;
   background-image: url("../images/pantalla-de-juego.jpg");
   background-position: center;
   background-size: cover; 
