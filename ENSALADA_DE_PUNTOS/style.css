@@ -1,0 +1,39 @@
+body {
+  background-color: goldenrod;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
+  /* flexbox para centrar el game-box en la pantalla */
+}
+
+#start-buton {
+  background-color: green;
+  color: white;
+  padding: 20px;
+  font-size: 20px;
+  margin-top: 40px;
+  border-radius: 10px;
+}
+
+#caja-de-juego {
+  position: relative;
+  background-color:gray;
+  width: 600px;
+  height: 400px;
+  overflow: hidden;
+  user-select: none;
+  /* overflow: hidden previene que los elementos salgan de la pantalla */
+  background-image: url("../images/pantalla-de-juego.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+
+  #pantalla-juego, #pantalla-final{
+    display: none;
+  }
