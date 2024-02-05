@@ -1,0 +1,3 @@
+class cuenco{
+    constructor ()
+}
