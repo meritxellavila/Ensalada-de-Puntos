@@ -5,6 +5,8 @@ const pantallaFinalNode = document.querySelector("#pantalla-final")
 const startButtonNode = document.querySelector("#start-button")
 
 let gameObj;
+let newGame;
+
 
 /*funciones*/
 function inicioJuego() {
@@ -13,7 +15,7 @@ function inicioJuego() {
 
 // OCULTAR PANTALLA DE INICIO 
 pantallaInicioNode.style.display = "none";
-
+pantallaFinalNode.style.display = "none";
 
 //MOSTRAR LA PANTALLA DE JUEGO
 
@@ -24,8 +26,9 @@ gameObj = new Game();
 console.log(gameObj)
 
 //INICIAR EL JUEGO 
-gameObj.start()
+// gameObj.start()
 }
+
 
 
 startButtonNode.addEventListener("click", inicioJuego) 

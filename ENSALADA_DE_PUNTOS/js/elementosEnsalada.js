@@ -1,6 +1,6 @@
-class elementosEnsalada{
+class ElementosEnsalada{
 
-    constructor(image, size = 200){
+    constructor(){
 
         this.x = 50; 
         this.y = 80;
@@ -9,7 +9,7 @@ class elementosEnsalada{
 
 
     this.node = document.createElement("img")
-    this.node.src = "./images/lechuga.jpg";
+    this.node.src = "./images/lettuce.jpg";
     console.log(lechuga)
 
 
