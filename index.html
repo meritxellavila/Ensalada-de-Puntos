@@ -3,35 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ensalada_De_Puntos</title>
+    <link rel="stylesheet" href="style.css" />
+    <title>ENSALADA DE PUNTOS</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!--PANTALLA DE BIENVENIDA-->
-    <!-- <div id="splash-screen" class="container"> -->
     <div id="pantalla-inicio" class="container">
       <h1>ENSALADA DE PUNTOS</h1>
       <img src="./images/inicio.jpg" alt="inicio" />
       <button id="start-button">Inicio!</button>
     </div>
-
-    <!--PANTALLA DE JUEGO-->
-      <div id="pantalla-juego" class="container">
-        <img src="./images/pantalla-de-juego.jpg" width="600" alt="pantalla" />
-        <!--caja-de-juego-->
-        <div id="caja-de-juego"></div>
-      </div>
-  
-
-    <!-- PANTALLA FINAL -->
     <div id="pantalla-final" class="container">
-      <H3>GAME OVER</H3>
-      <img src="./images/final.jpg" width="600" alt="logo" />
-    </div>
+        <H3>GAME OVER</H3>
+        <img src="./images/final.jpg" alt="logo" />
+      </div>
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+    <script src="./js/cuenco.js"></script>
+    <script src="./js/ingredientesEnsalada.js"></script>
+    <script src="./js/main.js"></script>
   </body>
 </html>
-
-<script src="./js/game.js"></script>
-<script src="./js/main.js"></script>
-<script src="./js/elementosEnsalada.js"></script>
-<script src="./js/cuenco.js"></script>
