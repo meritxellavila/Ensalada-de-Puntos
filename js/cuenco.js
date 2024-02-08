@@ -1,10 +1,10 @@
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 //const pantallaFinalNode = document.querySelector("#pantalla-final");
-const collectorWidth = 60;
-const collectorHeight = 60;
+const anchoCuenco = 60;
+const alturaCuenco = 60;
 let gameOver = false;
-let inicio = true;
+let pagina_inicio = true;
 class Cuenco {
   constructor(x, y, width, height, image) {
     this.x = x;
@@ -34,53 +34,61 @@ class Cuenco {
 }
 const cuencoImage = new Image();
 cuencoImage.src = "./images/cuenco.jpg";
-const collector = new Cuenco(
+const cuenco = new Cuenco(
   375,
   550,
-  collectorWidth,
-  collectorHeight,
+  anchoCuenco,
+  alturaCuenco,
   cuencoImage
 );
 document.addEventListener("keydown", (event) => {
   if (event.key === "ArrowLeft") {
-    collector.moverIzq();
+    cuenco.moverIzq();
   } else if (event.key === "ArrowRight") {
-    collector.moverDrh();
+    cuenco.moverDrh();
   }
 });
 
 const ingredients = [];
 function updateGame() {
-  if (!gameOver && !inicio) {
+  if (!gameOver && !pagina_inicio) {
     ingredients.forEach((ingredient) => {
-      ingredient.y += 3;
-      if (collector.checkCollision(ingredient)) {
+      ingredient.y += 3; // Flujo de caída de las verduras
+      if (cuenco.checkCollision(ingredient)) {
         if (
-          ingredient.image.src.includes(
-            "carrot" || "cucumber" || "carrot" || "bellpepper" || "lettuce"
+          ingredient.image.src.includes(//
+              
+           "carrot" || "cucumber" || "tomatoes" || "bellpepper" || "lettuce"
           )
         ) {
           const index = ingredients.indexOf(ingredient);
-          ingredients.splice(index, 1);
-        } else if ((gameOver = true)) {
+          console.log(index);          
+          ingredients.splice(index, 2);
+        } else if ((gameOver = true)) { 
           pantallaJuegoNode.style.display = "none";
-         pantallaFinalNode.style.display = "flex";
+          pantallaFinalNode.style.display = "flex";
+          setTimeout(() => {
+              location.reload(); // Reinicio a la página de inicio   
+              
+          }, 2000);
         }
       }
       if (ingredient.y > canvas.height + ingredient.height) {
         const index = ingredients.indexOf(ingredient);
         ingredients.splice(index, 1);
+        console.log(index);
+        
       }
     });
     if (Math.random() < 0.02) {
       const x = Math.random() * (canvas.width - 30) + 15;
-      const vegetableImage = RandomIngredientes();
-      const newIngredient = new Ingredient(x, 0, vegetableImage, 40, 40);
-      ingredients.push(newIngredient);
+      const imagenVerdura = RandomIngredientes();//retorna imagen  vegetal aleatorio
+      const nuevoIngredient = new Ingredient(x, 0, imagenVerdura, 40, 40); //retorna vegetal aleatorio
+      ingredients.push(nuevoIngredient);
     }
   }
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  collector.draw();
+  cuenco.draw();
   ingredients.forEach((ingredient) => ingredient.draw(ctx));
   requestAnimationFrame(updateGame);
 }
