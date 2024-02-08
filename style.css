@@ -15,15 +15,33 @@ canvas {
 #gameCanvas img {
   width: 100%;
   justify-content: center;
+
 }
 
 #start-button {
+  border-radius: 30px;
+  display: inline-block;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 117px;
+  margin-top: 5px;
+  width: 200px;
+  padding: 15px;
+  color: black;
+  border: 5px solid black;
+  font-size: xx-large;
+  font-family: fantasy;
   text-align: center;
-  z-index: 1;
+  background:goldenrod ;
+  transition: background-color 0.2s ease-out,
+              color 0.2s ease-out;
+              -webkit-border-radio: 28; 
+  cursor: pointer;
+  user-select: none; 
+}
+
+#start-button:hover{
+background: green;
+color: goldenrod  ;
 }
 
 .container {
@@ -39,6 +57,8 @@ canvas {
   font-style: unset;
   font-size: -webkit-xxx-large;
   font-family: fantasy;
+  position: relative;
+
 }
 
 #pantalla-inicio h1 {
@@ -47,26 +67,15 @@ margin-top: 0;
 
 #pantalla-inicio img {
   width: 80%; 
+
 }
 
-#start-button {
-  background-color: rgb(9, 80, 9);
-  color: white;
-  padding: 50px;
-  font-size: 50px;
-  margin-top: 50px;
-  border-radius: 20px;
-  position: absolute;
-  cursor: pointer;
-  font-family: fantasy;
-  font-style: unset;
-  user-select: none;
-}
 
 
 #gameCanvas img {
   width: 80%;
   justify-content: center;
+  
 }
 
 

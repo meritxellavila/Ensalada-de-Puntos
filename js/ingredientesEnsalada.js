@@ -17,7 +17,7 @@ class Ingredient {
   }
 
   function RandomIngredientes() {
-    const ingredientes = ["./images/carrot.png", "./images/lettuce.png", "./images/cucumber.png", "./images/bellpepper.png"];
+    const ingredientes = ["./images/carrot.png", "./images/lettuce.jpg", "./images/cucumber.png", "./images/bellpepper.png", "./images/elephant.png", "./images/bee.png"];
     const randomIndex = Math.floor(Math.random() * ingredientes.length);
     return ingredientes[randomIndex];
   } 

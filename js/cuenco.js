@@ -33,7 +33,7 @@ class Cuenco {
   }
 }
 const cuencoImage = new Image();
-cuencoImage.src = "./images/cuenco.jpg";
+cuencoImage.src = "./images/cuenco.png";
 const cuenco = new Cuenco(
   375,
   550,
@@ -63,7 +63,7 @@ function updateGame() {
         ) {
           const index = ingredients.indexOf(ingredient);
           console.log(index);          
-          ingredients.splice(index, 2);
+          ingredients.splice(index, 1);
         } else if ((gameOver = true)) { 
           pantallaJuegoNode.style.display = "none";
           pantallaFinalNode.style.display = "flex";
