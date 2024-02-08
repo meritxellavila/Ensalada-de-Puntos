@@ -9,11 +9,14 @@ class Ingredient {
         this.image.onload = () => {
             // Llama a la función de dibujo después de que la imagen se haya cargado completamente
             this.draw();
+           
         };
     }
     draw(ctx) {
         ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
     }
+
+  
   }
 
   function RandomIngredientes() {
@@ -21,3 +24,5 @@ class Ingredient {
     const randomIndex = Math.floor(Math.random() * ingredientes.length);
     return ingredientes[randomIndex];
   } 
+
+  
