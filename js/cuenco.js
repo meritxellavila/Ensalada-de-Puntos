@@ -85,9 +85,9 @@ function updateGame() {
         } else if ( gameOver = true ){
           pantallaJuegoNode.style.display = "none";
           pantallaFinalNode.style.display = "flex";
-          // setTimeout(() => {
-          // location.reload(); // Reinicio a la página de inicio
-          // }, 5000);
+          setTimeout(() => {
+          location.reload(); // Reinicio a la página de inicio
+          }, 5000);
         }
         
       }
