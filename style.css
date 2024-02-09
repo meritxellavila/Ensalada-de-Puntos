@@ -1,10 +1,15 @@
 body {
+  display: flex;
+  justify-content: center;
+  position: relative;
   background-color: goldenrod;
   margin: 0;
 }
 canvas {
   display: none;
-  width: 100%;
+  position: absolute;
+  top: 55px;
+  width: 1200px;
   height: auto;
   border: 1px solid #000;
   background-image: url("./images/pantalla-de-juego.jpg");
@@ -13,7 +18,7 @@ canvas {
 }
 
 #gameCanvas img {
-  width: 100%;
+  width: 20px;
   justify-content: center;
 
 }
@@ -82,6 +87,10 @@ margin-top: 0;
 #pantalla-final {
      display: none;
      user-select: none;
+     height: auto;
+     width: 100%;
+     position: absolute;
+     top: 190px;
 }
 
 #pantalla-final h3{
@@ -89,7 +98,6 @@ margin-top: 0;
   color:black;
   font-size: 150px;
   z-index: 1;
-  position: absolute;
   cursor: pointer;
   font-family: fantasy;
   font-style: unset;
@@ -97,7 +105,8 @@ margin-top: 0;
   
 }
 #pantalla-final img{
- width: 80%;
- height: 50%;
+ width: 1200px;
+ height: auto;
  opacity: 0.7;
 }
+
