@@ -52,8 +52,10 @@ document.addEventListener("keydown", (event) => {
 
 const ingredients = [];
 
+// Es el núcleo del bucle de juego y maneja la lógica principal del juego
 function updateGame() {
   if (!gameOver && !pagina_inicio) {
+    // Verifica si el juego no ha terminado (`gameOver` es falso) y no está en la página de inicio (`pagina_inicio` es falso)
     for (let i = ingredients.length - 1; i >= 0; i--) {
       const ingredient = ingredients[i];
       ingredient.y += 3;
@@ -75,25 +77,23 @@ function updateGame() {
             ingredient.image.src.includes("bellpepper") ||
             ingredient.image.src.includes("lettuce")
           ) {
-            score += 1; // Aumentar el puntaje por cada zanahoria
+            score += 1; // Aumentar el puntaje por cada verdura
             console.log("Score: " + score);
           }
+        } else if ((gameOver = true)) {
+          pantallaJuegoNode.style.display = "none";
+          pantallaFinalNode.style.display = "flex";
+          setTimeout(() => {
+            location.reload(); // Reinicio a la página de inicio
+          }, 5000);
         }
-        
-          else if (gameOver = true) {
-            pantallaJuegoNode.style.display = "none";
-            pantallaFinalNode.style.display = "flex";
-            setTimeout(() => {
-              location.reload(); // Reinicio a la página de inicio
-            }, 5000);
-          }
       }
-
+      /*Elimina los ingredientes que han pasado el cuenco*/
       if (ingredient.y > canvas.height + ingredient.height) {
         ingredients.splice(i, 1);
       }
     }
-
+    //Genera aleatoriamente nuevos ingredientes con una probabilidad del 2%
     if (Math.random() < 0.02) {
       const x = Math.random() * (canvas.width - 30) + 15;
       const imagenVerdura = randomIngredientes();
@@ -109,11 +109,12 @@ function updateGame() {
   }
 
   // Dibujar el puntaje
-  ctx.fillStyle = "black"; // Color del texto
-  ctx.font = "20px Arial"; // Estilo y tamaño de fuente
-  ctx.fillText("Score: " + score, 10, 30); // Texto y posición
+  ctx.fillStyle = "black";
+  ctx.font = "20px Arial";
+  ctx.fillText("Score: " + score, 10, 30);
 
   requestAnimationFrame(updateGame);
 }
 
+//Se encarga de mover los ingredientes, detectar colisiones con el cuenco, manejar las consecuencias de estas colisiones
 updateGame();
