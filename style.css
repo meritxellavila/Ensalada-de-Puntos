@@ -14,13 +14,12 @@ canvas {
   border: 1px solid #000;
   background-image: url("./images/pantalla-de-juego.jpg");
   background-size: cover;
-  overflow:hidden;
+  overflow: hidden;
 }
 
 #gameCanvas img {
   width: 20px;
   justify-content: center;
-
 }
 
 #start-button {
@@ -36,17 +35,16 @@ canvas {
   font-size: xx-large;
   font-family: fantasy;
   text-align: center;
-  background:goldenrod ;
-  transition: background-color 0.2s ease-out,
-              color 0.2s ease-out;
-              -webkit-border-radio: 28; 
+  background: goldenrod;
+  transition: background-color 0.2s ease-out, color 0.2s ease-out;
+  -webkit-border-radio: 28;
   cursor: pointer;
-  user-select: none; 
+  user-select: none;
 }
 
-#start-button:hover{
-background: green;
-color: goldenrod  ;
+#start-button:hover {
+  background: green;
+  color: goldenrod;
 }
 
 .container {
@@ -63,50 +61,100 @@ color: goldenrod  ;
   font-size: -webkit-xxx-large;
   font-family: fantasy;
   position: relative;
-
 }
 
 #pantalla-inicio h1 {
-margin-top: 0;
+  margin-top: 0;
 }
 
 #pantalla-inicio img {
-  width: 80%; 
-
+  width: 80%;
 }
-
-
 
 #gameCanvas img {
   width: 80%;
   justify-content: center;
-  
 }
-
 
 #pantalla-final {
-     display: none;
-     user-select: none;
-     height: auto;
-     width: 100%;
-     position: absolute;
-     top: 190px;
+  display: none;
+  user-select: none;
+  height: auto;
+  width: 100%;
+  position: absolute;
+  top: 190px;
 }
 
-#pantalla-final h3{
+#pantalla-final h3 {
   position: absolute;
-  color:black;
+  color: black;
   font-size: 150px;
   z-index: 1;
   cursor: pointer;
   font-family: fantasy;
   font-style: unset;
-    
-  
 }
-#pantalla-final img{
- width: 1200px;
- height: auto;
- opacity: 0.7;
+#pantalla-final img {
+  width: 1200px;
+  height: auto;
+  opacity: 0.7;
 }
 
+@media (max-width: 760px) {
+  #pantalla-inicio h1 {
+    margin: 0;
+    margin-top: 11px;
+    font-size: x-large;
+  }
+  #pantalla-inicio img {
+    max-width: 380px;
+  }
+  #start-button {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    position: initial;
+    width: 184px;
+    padding: 4px;
+    border-radius: 24px;
+    font-size: xx-large;
+  }
+
+  #gameCanvas {
+    background-color: lawngreen;
+    top: 102px;
+    width: 450px;
+  }
+
+  #pantalla-final img {
+    width: 450px;
+  }
+
+  #pantalla-final h3 {
+    font-size: 45px;
+  }
+}
+
+@media (min-width: 760px) and (max-width: 1024px) {
+  #pantalla-inicio h1 {
+    font-size: xxx-large;
+  }
+
+  #start-button {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    position: initial;
+  }
+
+  #gameCanvas {
+    width: 650px;
+  }
+
+  #pantalla-final img {
+    width: 700px;
+  }
+  #pantalla-final h3 {
+    font-size: 100px;
+  }
+}
