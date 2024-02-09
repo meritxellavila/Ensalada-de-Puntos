@@ -53,43 +53,40 @@ document.addEventListener("keydown", (event) => {
 const ingredients = [];
 
 function updateGame() {
-
-
   if (!gameOver && !pagina_inicio) {
     for (let i = ingredients.length - 1; i >= 0; i--) {
       const ingredient = ingredients[i];
       ingredient.y += 3;
-      
+
       if (cuenco.checkCollision(ingredient)) {
         if (
-          ingredient.image.src.includes("carrot")  ||
+          ingredient.image.src.includes("carrot") ||
           ingredient.image.src.includes("cucumber") ||
           ingredient.image.src.includes("tomatoes") ||
           ingredient.image.src.includes("bellpepper") ||
           ingredient.image.src.includes("lettuce")
         ) {
-
           ingredients.splice(i, 1);
 
-          if (ingredient.image.src.includes("carrot") ||
-          ingredient.image.src.includes("cucumber") ||
-          ingredient.image.src.includes("tomatoes") ||
-          ingredient.image.src.includes("bellpepper") ||
-          ingredient.image.src.includes("lettuce")) {
-        score += 1; // Aumentar el puntaje por cada zanahoria
-        console.log("Score: " + score);
-      }
-            
-          
-          
-        } else if ( gameOver = true ){
-          pantallaJuegoNode.style.display = "none";
-          pantallaFinalNode.style.display = "flex";
-          setTimeout(() => {
-          location.reload(); // Reinicio a la página de inicio
-          }, 5000);
+          if (
+            ingredient.image.src.includes("carrot") ||
+            ingredient.image.src.includes("cucumber") ||
+            ingredient.image.src.includes("tomatoes") ||
+            ingredient.image.src.includes("bellpepper") ||
+            ingredient.image.src.includes("lettuce")
+          ) {
+            score += 1; // Aumentar el puntaje por cada zanahoria
+            console.log("Score: " + score);
+          }
         }
         
+          else if (gameOver = true) {
+            pantallaJuegoNode.style.display = "none";
+            pantallaFinalNode.style.display = "flex";
+            setTimeout(() => {
+              location.reload(); // Reinicio a la página de inicio
+            }, 5000);
+          }
       }
 
       if (ingredient.y > canvas.height + ingredient.height) {
@@ -108,16 +105,15 @@ function updateGame() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   cuenco.draw();
   for (let i = 0; i < ingredients.length; i++) {
-    ingredients[i].draw(ctx);    
+    ingredients[i].draw(ctx);
   }
 
-   // Dibujar el puntaje
-   ctx.fillStyle = "black"; // Color del texto
-   ctx.font = "20px Arial"; // Estilo y tamaño de fuente
-   ctx.fillText("Score: " + score, 10, 30); // Texto y posición
+  // Dibujar el puntaje
+  ctx.fillStyle = "black"; // Color del texto
+  ctx.font = "20px Arial"; // Estilo y tamaño de fuente
+  ctx.fillText("Score: " + score, 10, 30); // Texto y posición
 
   requestAnimationFrame(updateGame);
 }
 
 updateGame();
-
